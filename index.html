@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Vòng xoay may mắn</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript">
+		function validate(){
+	var ten = document.vidu.ten.value;
+	if(ten==""){document.getElementById('sp1').innerHTML = "Bạn chưa nhập tên";document.vidu.ten.focus();return false;}
+	var mail = document.vidu.mail.value;
+	if(mail==""){document.getElementById('sp2').innerHTML ="Bạn chưa nhập email";document.vidu.mail.focus();return false;}
+	var diachi = document.vidu.diachi.value;
+	if(diachi==""){document.getElementById('sp3').innerHTML = "Bạn chưa nhập địa chỉ";document.vidu.diachi.focus();return false;}
+	
+	
+	var sodt = document.vidu.sdt.value;
+	var chieudai = sodt.length;
+	if(isNaN(sodt)==true){document.getElementById("sp4").innerHTML="Số Điện thoại không hợp lệ";document.vidu.sdt.focus();return false;}
+	if(chieudai!=10){document.getElementById("sp4").innerHTML = "Bạn Chưa nhập số điện thoại";document.vidu.sdt.focus();return false;}
+	var noidung = document.vidu.noidung.value;
+	if(noidung==""){document.getElementById('sp5').innerHTML = "Bạn chưa nhập nội dung";document.vidu.noidung.focus();return false;}
+	var ngay = document.vidu.ngay.value;
+	if(ngay==""){document.getElementById('sp6').innerHTML = "Bạn Chưa chọn ngày";document.vidu.ngay.focus();return false}
+		document.write('<h1>Chúng tôi Sẽ liên hệ với bạn sớm nhất có thể</h1>')
+	}
+
+</script>
+</head>
+
+<body>
+<wheel></wheel>
+<button id="playWheel" onclick="start()">Play</button>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript" src="js/phaser.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+  <div id="right" style="height:auto;">
+      <div class="lienhe" style="text-align:center;" >
+		<form name="vidu" action="#" onsubmit="return validate();">
+			<table border="0" style="text-align:center;width:60%;">
+				<tr>
+					<td><label>Họ và tên:</label></td>
+					<td><input type="text" name="ten"><br><span id="sp1"></span></td>
+				</tr>
+				<tr>
+					<td><label>Email:</label></td>
+					<td><input type="text" name="mail"><br><span id="sp2"></span></td>
+				</tr>
+				<tr>
+					<td><label>Địa chỉ</label></td>
+					<td><input type="text" name="diachi"><br><span id="sp3"></span></td>
+				</tr>
+				<tr>
+					<td><label>Số điện thoại</label></td>
+					<td><input type="text" name="sdt"><br><span id="sp4"></span></td>
+				</tr>
+				<tr>
+					<td><label for="noidung">Nội Dung</label></td>
+				 <td><textarea name="noidung" class="noidung"></textarea><br><span id="sp5"></span></td>
+				</tr>
+				<tr>
+					<td><label>Ngày Gửi</label></td>
+					<td><input type="text" name="ngay" id="ngay" /><br><span id="sp6"></span></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="gui" value="Gửi"> 
+					<input type="reset" value="Hủy" id="reset" name="gui"></td>
+				</tr>
+			</table>
+			
+		</form>
+	</div>
+    </div>
+  </div>
+
+
+</body>
+</html>
